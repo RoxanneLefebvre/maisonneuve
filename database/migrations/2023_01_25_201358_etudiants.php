@@ -14,15 +14,21 @@ class Etudiants extends Migration
     public function up()
     {
         Schema::create('etudiants', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('nom', 50);
             $table->string('adresse');
             $table->string('phone');
             $table->string('email');
             $table->string('dateNaissance');
-            $table->integer('villeId');
-            $table->foreign('villeId')->references('id')->on('villes');
+            $table->integer('ville_id')->unsigned();
+
             $table->timestamps();
+        });
+
+        Schema::table('etudiants', function (Blueprint $table) {
+
+            $table->foreign('ville_id')->references('id')->on('villes');
+
         });
     }
 
@@ -33,6 +39,6 @@ class Etudiants extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('etudiants');
     }
 }

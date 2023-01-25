@@ -14,7 +14,7 @@ class Villes extends Migration
     public function up()
     {
         Schema::create('villes', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('nom');
 
         });
@@ -27,6 +27,6 @@ class Villes extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('villes');
     }
 }
