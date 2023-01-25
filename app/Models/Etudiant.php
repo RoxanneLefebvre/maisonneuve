@@ -14,6 +14,7 @@ class Etudiant extends Model
         'adresse',
         'phone',
         'email',
-        'dataNaissance',
+        'dateNaissance',
+        'ville_id',
     ];
 }
