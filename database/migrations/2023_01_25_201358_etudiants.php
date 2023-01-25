@@ -13,11 +13,15 @@ class Etudiants extends Migration
      */
     public function up()
     {
-        Schema::create('blog_posts', function (Blueprint $table) {
+        Schema::create('etudiants', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 100);
-            $table->text('body');
-            $table->integer('user_id');
+            $table->string('nom', 50);
+            $table->string('adresse');
+            $table->string('phone');
+            $table->string('email');
+            $table->string('dateNaissance');
+            $table->integer('villeId');
+            $table->foreign('villeId')->references('id')->on('villes');
             $table->timestamps();
         });
     }

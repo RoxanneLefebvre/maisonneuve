@@ -13,7 +13,11 @@ class Villes extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('villes', function (Blueprint $table) {
+            $table->id();
+            $table->string('nom');
+
+        });
     }
 
     /**
