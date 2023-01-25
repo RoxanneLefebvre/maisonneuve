@@ -15,10 +15,8 @@ class VilleFactory extends Factory
     {
         return [
             
-            'nom' => $this->faker->city(),
+            'nom' => $this->faker->city()
          
-            
-
         ];
     }
 }
