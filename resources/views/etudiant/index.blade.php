@@ -11,7 +11,7 @@
             <hr>
             <div class="row">
                 <div class="col-8">
-                    <p>Bonne lecture!
+                    <p>Bienvenue sur le site de Maisonneuve
 
                     </p>
                 </div>
