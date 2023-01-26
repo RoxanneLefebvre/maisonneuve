@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EtudiantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,11 @@ Route::get('/', function () {
 });
 
 
-Route::get('blog', [blogPostController::class, 'index'])->name('blog.index');
+Route::get('etudiant', [etudiantController::class, 'index'])->name('etudiant.index');
+Route::get('etudiant/{etudiant}', [etudiantController::class, 'show'])->name('etudiant.detail');
+Route::get('etudiant-create', [etudiantController::class, 'create'])->name('etudiant.create');
+Route::post('etudiant-create', [etudiantController::class, 'store']); // pas besoin de nom 
+Route::get('etudiant-edit/{etudiant}', [etudiantController::class, 'edit'])->name('etudiant.edit');
+Route::put('etudiant-edit/{etudiant}', [etudiantController::class, 'update']);
+Route::delete('etudiant-edit/{etudiant}', [etudiantController::class, 'destroy']);
+

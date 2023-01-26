@@ -13,7 +13,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic saepe voluptatibus, ex, dolor magni illo deleniti cum amet quod, tempora itaque incidunt eligendi molestias? Error voluptas vero ea eveniet. Aliquam, facilis dolore voluptatem reprehenderit et delectus nostrum vel amet illum itaque! Modi maxime voluptates quia dolorem earum ullam aperiam sapiente?
 
             </p>
-            <a href="{{ route('blog.index')}}" class="btn btn-outline-primary">Afficher le blog</a>
+            <a href="{{ route('etudiant.index')}}" class="btn btn-outline-primary">Afficher le blog</a>
         </div>
     </div>
 </div>
