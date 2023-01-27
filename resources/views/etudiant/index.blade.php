@@ -6,18 +6,15 @@
     <div class="row">
         <div class="col-12 text-center pt-5">
             <h1 class="display-one mt-5">
-            {{ config('app.name')}}
+            College de {{ config('app.name')}}
             </h1>
             <hr>
             <div class="row">
-                <div class="col-8">
-                    <p>Bienvenue sur le site de Maisonneuve
-
-                    </p>
+                <div class="col-12">
+                    
+                    <p>Liste de tout les etudiant presentement inscrit</p>
                 </div>
-                <div class="col-md-4">
-                    <a href="{{ route('etudiant.create')}}" class="btn btn-outline-primary">ajoute un etudiant</a>
-                </div>
+              
             </div>
             <hr>
         </div>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ config('app.name')}} : @yield('title')</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}">
+    
 </head>
 <header>
   <!-- Navbar -->
@@ -25,7 +26,7 @@
       <div class="collapse navbar-collapse" id="navbarExample01">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="#">Home</a>
+            <a class="nav-link" aria-current="page" href="{{ route('etudiant.index')}}">Accueil</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Features</a>
@@ -34,7 +35,7 @@
             <a class="nav-link" href="#">Pricing</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="{{ route('etudiant.create')}}">inscription</a>
           </li>
         </ul>
       </div>
@@ -44,24 +45,23 @@
 
   <!-- Background image -->
   <div
-    class="p-5 text-center bg-image"
+    class=" text-center bg-image"
     style="
-      background-image: url('./Maisonneuve/public/img/headerOmnivox.png');
-      height: 400px;
+      height: 174px;
+      background-image: url('/img/headerOmnivox.png');
     "
   >
-    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+    
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
-          <h1 class="mb-3">Heading</h1>
-          <h4 class="mb-3">Subheading</h4>
-          <a class="btn btn-outline-light btn-lg" href="#!" role="button"
-          >Call to action</a
-          >
+          <h1 class="mb-3">Blog Maisonneuve</h1>
+          <h4 class="mb-3">bienvenue!</h4>
+         
+      
         </div>
       </div>
     </div>
-  </div>
+
   <!-- Background image -->
 </header>
 <body>

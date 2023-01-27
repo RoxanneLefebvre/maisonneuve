@@ -5,24 +5,27 @@
 
 
 
-<div class="container">
-<a href="{{ route('etudiant.index')}}" class="btn btn-outline-primary">retourne sur la page d'acceuil</a>
-    <div class="row">
-        <div class="col-12 text-center pt-5">
-            <h1 class="display-one mt-5">
-            {{ $etudiant->nom }}
-            </h1>
-            <hr>
-            <p>{{  $etudiant->id }}</p>
-            <p>{{  $etudiant->adresse }}</p>
-            <p>{{  $etudiant->phone }}</p>
-            <p>{{  $etudiant->email }}</p>
-            <p>{{  $etudiant->dateNaissance }}</p>
-            <small>{{ $etudiant->villeParId->nom }}</small>
+<div class="container pt-5">
 
-            <hr>
-        </div>
-    </div>
+<div class="row mb-5 justify-content-center">
+                <div class="col-8">
+                    <div class="card px-2">
+                      <h1>{{ $etudiant->nom }}</h1>
+                        <div class="card-header p-3">
+                            <p><strong>Id: </strong> {{  $etudiant->id }}</p>
+                            <p><strong>Adresse: </strong> {{  $etudiant->adresse }}</p>
+                            <p><strong>Telephone: </strong> {{  $etudiant->phone }}</p>
+                            <p><strong>Email: </strong> {{  $etudiant->email }}</p>
+                            <p><strong>Date de Naissance: </strong>{{  $etudiant->dateNaissance }}</p>
+                            <p><strong>Ville: </strong> {{ $etudiant->villeParId->nom }}</p>
+                            
+                        </div>
+                        <div class="card-body">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
 </div>
 <div class="row text-center">
     <div class="col-6">
@@ -42,6 +45,10 @@
 
 
 
+
+
+
+
 <!-- Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -51,7 +58,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        etes vous certain de vouloir effacer ce post.
+        Etes vous certain de vouloir effacer cet eleve?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
