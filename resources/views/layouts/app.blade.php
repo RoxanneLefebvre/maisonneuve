@@ -47,8 +47,8 @@
   <div
     class=" text-center bg-image"
     style="
-      height: 174px;
-      background-image: url('/img/headerOmnivox.png');
+      height: 172px;
+      background-image: url('/img/headerMaisonneuve.png');
     "
   >
     

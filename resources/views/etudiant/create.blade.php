@@ -9,7 +9,7 @@
 
     <div class="row mt-5">
         <div class="col-12 text-center mt-2">
-            <h1 class="display-one">Ajouter un etudiant</h1>
+            <h1 class="display-one">Inscription</h1>
         </div>
     </div>
 
@@ -28,28 +28,57 @@
                     formulaire
                 </div>
                 <div class="card-body">
-                <div class="control-group col-12">
-                        <label for="nom">Nom</label>
-                        <input type="text" name="nom" id="nom" class="form-control">
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{session('success')}}
                     </div>
-                    <div class="control-group col-12">
-                        <label for="adresse">Adresse</label>
-                        <input type="text" name="adresse" id="adresse" class="form-control">
+                    @endif
+                <div class="form-group mb-3">
+                        
+                        <input type="text" placeholder="Nom" name="nom" id="nom" class="form-control" value="{{old('nom')}}">
+                        @if ($errors->has('nom'))
+                                    <div class="text-danger mt-2">
+                                        {{$errors->first('nom')}}
+                                    </div>
+                                @endif
                     </div>
-                    <div class="control-group col-12">
-                        <label for="phone">Telephone</label>
-                        <input type="text" name="phone" id="phone" class="form-control">
+                    <div class="form-group mb-3">
+                        
+                        <input type="text" placeholder="Adresse" name="adresse" id="adresse" class="form-control" value="{{old('adresse')}}">
+                        @if ($errors->has('adresse'))
+                                    <div class="text-danger mt-2">
+                                        {{$errors->first('adresse')}}
+                                    </div>
+                                @endif
                     </div>
-                    <div class="control-group col-12">
-                        <label for="email">Email</label>
-                        <input type="text" name="email" id="email" class="form-control">
+                    <div class="form-group mb-3">
+                        <input type="text" placeholder="Telephone" name="phone" id="phone" class="form-control" value="{{old('telephone')}}">
+                        @if ($errors->has('telephone'))
+                                    <div class="text-danger mt-2">
+                                        {{$errors->first('telephone')}}
+                                    </div>
+                                @endif
                     </div>
-                    <div class="control-group col-12">
-                        <label for="dateNaissance">date de Naissance</label>
-                        <input type="text" name="dateNaissance" id="dateNaissance" class="form-control">
+                    <div class="form-group mb-3">
+                       
+                        <input type="text" placeholder="Email" name="email" id="email" class="form-control" value="{{old('email')}}">
+                        @if ($errors->has('email'))
+                                    <div class="text-danger mt-2">
+                                        {{$errors->first('email')}}
+                                    </div>
+                                @endif
                     </div>
-                    <div class="form-group">
-                        <label for="ville_id">Ville</label>
+                    <div class="form-group mb-3">
+                        
+                        <input type="text" placeholder="Date de Naissance" name="dateNaissance" id="dateNaissance" class="form-control" value="{{old('dateNaissance')}}">
+                        @if ($errors->has('dateNaissance'))
+                                    <div class="text-danger mt-2">
+                                        {{$errors->first('dateNaissance')}}
+                                    </div>
+                                @endif
+                    </div>
+                    <div class="form-group mb-3">
+                        
                         <select class="form-control" id="ville_id" name="ville_id">
                             <option value="" selected disabled>
                             choisisez une ville
@@ -58,6 +87,11 @@
                             <option value="{{$ville->id}}">{{ $ville->nom }}</option>
                             @endforeach
                         </select>
+                        @if ($errors->has('ville_id'))
+                                    <div class="text-danger mt-2">
+                                        {{$errors->first('ville_id')}}
+                                    </div>
+                                @endif
                     </div>
                 </div>
                 <div class="card-footer">
@@ -79,64 +113,12 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
 
-<div class="container">
-<br>  <h1 class="text-center">Inscription</h1>
-<hr>
 
 
 
 
 
-<div class="card bg-light">
-<article class="card-body mx-auto" style="max-width: 400px;">
-	
-	<form method="POST">
-    @csrf
-	<div class="form-group input-group">
-		<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-		 </div>
-         
-                        <input type="text" name="nom" id="nom" class="form-control">
-    </div> <!-- form-group// -->
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-		 </div>
-         
-                        <input type="text" name="email" id="email" class="form-control">
-    </div> <!-- form-group// -->
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
-		</div>
-		
-                        <input type="text" name="phone" id="phone" class="form-control">
-    </div> <!-- form-group// -->
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
-		</div>
-		<select class="form-control" id="ville_id" name="ville_id">
-                            <option value="" selected disabled>
-                            choisisez une ville
-                            </option>
-                            @foreach($villes as $ville)
-                            <option value="{{$ville->id}}">{{ $ville->nom }}</option>
-                            @endforeach
-                        </select>
-	</div> <!-- form-group end.// -->
-    <div class="row mb-4 justify-content-center">
-                    <input type="submit" value="Envoyer" class="btn btn-success">
-                    </div>
 
-                                                                      
-</form>
-</article>
-</div> <!-- card.// -->
-
-</div> 
-<!--container end.//-->
 
 
 

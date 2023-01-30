@@ -46,16 +46,35 @@ class EtudiantController extends Controller
      */
     public function store(Request $request)
     {
-        $newEtudiant = Etudiant::create([
-            'nom'=> $request->nom,
-            'adresse'=> $request->adresse,
-            'phone'=> $request->phone,
-            'email'=> $request->email,
-            'dateNaissance'=> $request->dateNaissance,
-            'ville_id'=> $request->ville_id,
+        // $newEtudiant = Etudiant::create([
+        //     'nom'=> $request->nom,
+        //     'adresse'=> $request->adresse,
+        //     'phone'=> $request->phone,
+        //     'email'=> $request->email,
+        //     'dateNaissance'=> $request->dateNaissance,
+        //     'ville_id'=> $request->ville_id,
+        // ]);
+
+        // return redirect(route('etudiant.detail', $newEtudiant));
+
+
+        $request->validate([
+            'nom'=>'required',
+            'adresse'=>'required',
+            'phone'=>'required|numeric|digits:10',
+            'email'=>'required|email|unique:etudiants',
+            'dateNaissance'=>'required',
+            'ville_id'=>'required'
+         
         ]);
 
-        return redirect(route('etudiant.detail', $newEtudiant));
+        
+
+        $etudiant = new Etudiant;
+        $etudiant->fill($request->all());
+        $etudiant->save();
+
+        return redirect()->back()->withSuccess('Etudiant inscrit, vous recevrez un courriel de confirmation prochainement!');
     }
 
     /**
