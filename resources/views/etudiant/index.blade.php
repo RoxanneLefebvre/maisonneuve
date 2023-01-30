@@ -19,30 +19,35 @@
             <hr>
         </div>
 
-            <div class="row mb-5">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <p>Liste des Etudiants
-
-                            </p>
-                        </div>
-                        <div class="card-body">
-                            <ul>
-                                @forelse($etudiants as $etudiant)
-                                    <li><a href="{{ route('etudiant.detail', $etudiant->id)}}">{{ $etudiant->nom }}</a></li>
-                                    @empty
-                                    <li class="text-danger">Aucun etudiant trouver</li>
+        <div class="container">
+    <div class="card mt-3">
+        <div class="card-body">
+            <table class="table table-striped">
+                <tr>
+                    <th>Nom</th>
+                    <th>Date d'inscription</th>
+                </tr>
+                @forelse($etudiants as $etudiant)
+                <tr>
+                    <td><a href="{{ route('etudiant.detail', $etudiant->id)}}">{{ $etudiant->nom}}</a></td>
+                    <td>{{ $etudiant->created_at}}</td>
+                
+                </tr>
+                @empty
+                                    <td class="text-danger">Aucun etudiant trouver</td>
                                 @endforelse
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </table>
+            {{$etudiants}}
+        </div>
+
+    </div>
+</div>
             
            
     </div>
 </div> 
+
+
 
 
 

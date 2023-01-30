@@ -15,10 +15,17 @@ class EtudiantController extends Controller
      */
     public function index()
     {
-        $etudiants = Etudiant::all();
-        //return $blogs[0]->title;
+        $etudiants = Etudiant::select()
+        ->paginate(20);
         return view('etudiant.index', ['etudiants'=>$etudiants]);
     }
+
+    // public function page(){
+    //     $blogPosts = BlogPost::select()
+    //     ->paginate(5);
+        
+    //     return view('blog.page',['blogPosts'=>$blogPosts]);
+    // }
 
     /**
      * Show the form for creating a new resource.
